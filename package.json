@@ -1,17 +1,41 @@
 {
   "name": "file-upload-example",
   "version": "0.1.0",
-  "private": true,
+  "scripts": {
+    "nodemon": "nodemon src/server.js",
+    "webpack": "webpack -wd",
+    "test": "jest --watch"
+  },
   "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "json-loader": "^0.5.7",
+    "prop-types": "^15.5.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-dropzone": "^4.2.5",
-    "react-scripts": "1.1.0"
+    "request": "^2.83.0",
+    "style-loader": "^0.19.1",
+    "webpack": "^2.5.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+  "babel": {
+    "presets": [
+      "react",
+      "env",
+      "stage-2"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.0",
+    "jest": "^20.0.1",
+    "nodemon": "^1.11.0"
   }
 }

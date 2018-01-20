@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Dropzone from 'react-dropzone'
+import css from './index.css';
+import Dropzone from 'react-dropzone';
+
+// const request = require('request');
 
 class Basic extends React.Component {
   constructor() {
@@ -13,14 +14,21 @@ class Basic extends React.Component {
     this.setState({
       files
     });
+    // const req = request.post('/upload');
+    // acceptedFiles.forEach(file => {
+    //     req.attach(file.name, file);
+    // });
+    // req.end(callback);
   }
 
   render() {
     return (
       <section>
         <div className="dropzone">
-          <Dropzone onDrop={this.onDrop.bind(this)}>
-            <p>Try dropping some files here, or click to select files to upload.</p>
+          <Dropzone
+            accept="application/pdf"
+            onDrop={this.onDrop.bind(this)}>
+            <p>Try dropping some pdf files here, or click to select files to upload.</p>
           </Dropzone>
         </div>
         <aside>
@@ -41,7 +49,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Upload Your File</h1>
         </header>
         <p className="App-intro">
